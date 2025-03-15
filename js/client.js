@@ -3,12 +3,17 @@ const socket = io('http://localhost:8000');
 const form = document.getElementById('send-container');
 const messageInput = document.getElementById('messageInp');
 const messageContainer = document.querySelector(".container");
+const audio = new Audio('./Assets/ring.mp3');
 
 const append = (message, position) => {
     const messageElement = document.createElement('div');
     messageElement.innerText = message;
     messageElement.classList.add('message', position);
     messageContainer.appendChild(messageElement); // FIXED: Used appendChild instead of append
+    if (position === 'left') {
+        audio.currentTime = 0; // Reset audio to start if played again
+        audio.play().catch(error => console.error("Audio play failed:", error)); // FIXED: Catch autoplay errors
+    }
 };
 
 form.addEventListener('submit' ,(e)=>{
