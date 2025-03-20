@@ -17,8 +17,8 @@ A simple real-time chat application using **Node.js**, **Socket.io**, **HTML**, 
 
 ### 1️⃣ Clone the Repository
 ```sh
-git clone https://github.com/yourusername/realtime-chat-app.git
-cd realtime-chat-app
+git https://github.com/Sanjaypandit1/Web-Chatt.git
+cd nodeServer
 ```
 
 ### 2️⃣ Install Dependencies
